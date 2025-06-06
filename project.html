@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | JOYLYN CONSTANTINO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0f0f17;
+      color: #ffffff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #f5b120;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #f5b120;
+    }
+
+    .reach-out {
+      background-color: #f5b120;
+      color: #000;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .projects-section {
+      padding: 60px 80px;
+    }
+
+    .projects-section h2 {
+      font-size: 32px;
+      color: #f5b120;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .project-card {
+      background-color: #1c1c29;
+      border-radius: 12px;
+      padding: 20px;
+      width: 340px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Carousel container */
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(245, 177, 32, 0.5);
+      background-color: #22222e;
+    }
+
+    /* Carousel images wrapper */
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 180px;
+    }
+
+    /* Carousel images */
+    .carousel-images a {
+      min-width: 100%;
+      height: 180px;
+      display: block;
+      overflow: hidden;
+      border-radius: 6px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .carousel-images img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .carousel-images img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Carousel buttons */
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(245, 177, 32, 0.8);
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+      color: #000;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    .carousel-button:hover {
+      background-color: #f5b120;
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .project-card h3 {
+      color: #f5b120;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      color: #cfcfcf;
+    }
+
+    footer {
+      background-color: #1c1c29;
+      padding: 40px 80px;
+      text-align: center;
+    }
+
+    footer h3 {
+      color: #f5b120;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: #ffffff;
+      margin: 0 15px;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #f5b120;
+    }
+
+    .footer-note {
+      color: #cfcfcf;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    /* Hide default Lightbox close icon */
+    .lb-close {
+      display: none !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🌀</div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="project.html" class="active">PROJECT</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <a href="Constantino.pdf" class="reach-out">REACH OUT</a>
+  </header>
+
+  <section class="projects-section">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <a href="Img/p2.JPG" data-lightbox="portfolio"><img src="Img/p2.JPG" alt="Portfolio Image 1"></a>
+            <a href="Img/p3.JPG" data-lightbox="portfolio"><img src="Img/p3.JPG" alt="Portfolio Image 2"></a>
+            <a href="Img/p4.JPG" data-lightbox="portfolio"><img src="Img/p4.JPG" alt="Portfolio Image 3"></a>
+          </div>
+          <button class="carousel-button prev">&#10094;</button>
+          <button class="carousel-button next">&#10095;</button>
+        </div>
+        <h3>Supplies Management System</h3>
+        <p>A Supplies Management System is a digital tool designed to efficiently track, manage, and control inventory of supplies within an organization. It streamlines the procurement, usage, and replenishment processes, helping reduce waste, avoid stockouts, and maintain accurate records. This system improves overall operational efficiency by providing real-time visibility into supply levels and generating alerts for low stock or expiration dates.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <a href="Img/p6.JPG" data-lightbox="ecommerce"><img src="Img/p6.JPG" alt="E-Commerce Image 1"></a>
+            <a href="Img/p7.JPG" data-lightbox="ecommerce"><img src="Img/p7.JPG" alt="E-Commerce Image 2"></a>
+          </div>
+          <button class="carousel-button prev">&#10094;</button>
+          <button class="carousel-button next">&#10095;</button>
+        </div>
+        <h3>Donation Management System</h3>
+        <p>A Donation Management System is a software solution designed to streamline the process of collecting, tracking, and managing donations for non-profit organizations. It helps organize donor information, monitor donation campaigns, generate receipts, and provide detailed reports to ensure transparency and efficient fund allocation. This system enhances donor engagement and simplifies administrative tasks related to fundraising.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <a href="Img/p8.JPG" data-lightbox="dashboard"><img src="Img/p8.JPG" alt="Dashboard Image 1"></a>
+            <a href="Img/p9.JPG" data-lightbox="dashboard"><img src="Img/p9.JPG" alt="Dashboard Image 2"></a>
+            <a href="Img/p10.JPG" data-lightbox="dashboard"><img src="Img/p10.JPG"alt="Dashboard Image 3"></a>
+          </div>
+          <button class="carousel-button prev">&#10094;</button>
+          <button class="carousel-button next">&#10095;</button>
+        </div>
+        <h3>Ticketing System</h3>
+        <p>A Ticketing System for technical assistance is a software solution designed to manage, track, and resolve IT support requests efficiently. It allows users to submit technical issues or service requests, automatically assigns tickets to the appropriate support personnel, and monitors progress until resolution. This system streamlines communication between users and support teams, prioritizes tasks, and ensures timely, organized handling of technical problems to improve overall service quality.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <a href="Img/p11.jpg" data-lightbox="dashboard"><img src="Img/p11.jpg" alt="Dashboard Image 1"></a>
+            <a href="Img/p12.jpg" data-lightbox="dashboard"><img src="Img/p12.jpg" alt="Dashboard Image 2"></a>
+            <a href="Img/p13.jpg" data-lightbox="dashboard"><img src="Img/p13.jpg"alt="Dashboard Image 3"></a>
+          </div>
+          <button class="carousel-button prev">&#10094;</button>
+          <button class="carousel-button next">&#10095;</button>
+        </div>
+        <h3>Ordering System</h3>
+        <p>An Online Ordering System is a digital platform that allows customers to browse products, place orders, and make payments over the internet. It streamlines the purchasing process for businesses and enhances customer convenience by offering a fast, accessible, and user-friendly way to order anytime, anywhere.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="carousel">
+          <div class="carousel-images">
+            <a href="Img/p14.JPG" data-lightbox="dashboard"><img src="Img/p14.JPG" alt="Dashboard Image 1"></a>
+            <a href="Img/p15.JPG" data-lightbox="dashboard"><img src="Img/p15.JPG" alt="Dashboard Image 2"></a>
+            <a href="Img/p16.JPG" data-lightbox="dashboard"><img src="Img/p16.JPG"alt="Dashboard Image 3"></a>
+          </div>
+          <button class="carousel-button prev">&#10094;</button>
+          <button class="carousel-button next">&#10095;</button>
+        </div>
+        <h3>Library System</h3>
+        <p>The Library Management System is a desktop application developed using Java and Java Swing for managing book inventory, borrowing, and returns. It features a user-friendly graphical interface that allows librarians to add, update, and track books, manage member records, and monitor borrowing history efficiently. The system ensures organized library operations and provides a smooth experience for both administrators and users.</p>
+      </div>
+      
+    </div>
+        </section>
+        <section style="text-align: center; padding: 40px 20px; background-color: #0f0f17;">
+          <p style="font-size: 18px; color: #f5b120;">
+            For more inquiries, you can message us on our 
+            <a href="https://www.facebook.com/profile.php?id=61566511574827" target="_blank" style="color: #ffffff; text-decoration: underline;">Facebook page</a>.
+          </p>
+        </section>
+  
+
+  <footer>
+    <h3>Connect with me</h3>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/jujooooy" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/in/constantinojoylyn/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/your_username/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="footer-note">&copy; 2025 Joylyn Constantino. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carousel logic for each project card
+      const carousels = document.querySelectorAll('.carousel');
+
+      carousels.forEach(carousel => {
+        const imagesWrapper = carousel.querySelector('.carousel-images');
+        const imagesCount = imagesWrapper.children.length;
+        let currentIndex = 0;
+
+        const prevBtn = carousel.querySelector('.carousel-button.prev');
+        const nextBtn = carousel.querySelector('.carousel-button.next');
+
+        function updateCarousel() {
+          const offset = -currentIndex * 100;
+          imagesWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex === 0) ? imagesCount - 1 : currentIndex - 1;
+          updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % imagesCount;
+          updateCarousel();
+        });
+      });
+
+      // Lightbox custom close button (optional)
+      const closeBtn = document.createElement('button');
+      closeBtn.textContent = 'Close';
+      closeBtn.style.position = 'fixed';
+      closeBtn.style.top = '20px';
+      closeBtn.style.right = '30px';
+      closeBtn.style.padding = '10px 20px';
+      closeBtn.style.backgroundColor = '#f5b120';
+      closeBtn.style.color = '#000';
+      closeBtn.style.border = 'none';
+      closeBtn.style.borderRadius = '8px';
+      closeBtn.style.fontWeight = 'bold';
+      closeBtn.style.cursor = 'pointer';
+      closeBtn.style.zIndex = '10001';
+      closeBtn.style.display = 'none';
+
+      document.body.appendChild(closeBtn);
+
+      document.addEventListener('lightbox:opened', () => {
+        closeBtn.style.display = 'block';
+      });
+
+      document.addEventListener('lightbox:closed', () => {
+        closeBtn.style.display = 'none';
+      });
+
+      closeBtn.addEventListener('click', () => {
+        const escEvent = new KeyboardEvent('keydown', { key: 'Escape', keyCode: 27, bubbles: true });
+        document.dispatchEvent(escEvent);
+      });
+    });
+  </script>
+</body>
+</html>
